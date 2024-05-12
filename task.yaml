@@ -12,17 +12,20 @@ services:
     environment:
       PUID: 99
       PGID: 100
+      #Service
       VIKUNJA_SERVICE_PUBLICURL: https://task.actuary.dev
-      VIKUNJA_DATABASE_HOST: unraid.lan
-      VIKUNJA_DATABASE_PASSWORD: postgres_password
+      VIKUNJA_SERVICE_JWTSECRET: ${VIKUNJA_SERVICE_JWTSECRET}
+      #Database
       VIKUNJA_DATABASE_TYPE: postgres
-      VIKUNJA_DATABASE_USER: postgres_user
+      VIKUNJA_DATABASE_HOST: unraid.lan
       VIKUNJA_DATABASE_DATABASE: vikunja
-      VIKUNJA_SERVICE_JWTSECRET: test
-      VIKUNJA_REDIS_ENABLED: 1
-      VIKUNJA_REDIS_HOST: 'unraid.lan:6379'
-      VIKUNJA_CACHE_ENABLED: 1
+      VIKUNJA_DATABASE_PASSWORD: ${VIKUNJA_DATABASE_PASSWORD}
+      VIKUNJA_DATABASE_USER: ${VIKUNJA_DATABASE_USER}
+      #Cache
       VIKUNJA_CACHE_TYPE: redis
+      VIKUNJA_REDIS_HOST: 'unraid.lan:6379'
+      VIKUNJA_REDIS_ENABLED: 1
+      VIKUNJA_CACHE_ENABLED: 1
     ports:
       - 3456:3456
     deploy:

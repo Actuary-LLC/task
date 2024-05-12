@@ -21,6 +21,7 @@ jobs:
       VIKUNJA_DATABASE_USER: ${{ vars.POSTGRES_USER }}
       VIKUNJA_DATABASE_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
       VIKUNJA_SERVICE_JWTSECRET: ${{ secrets.SECRET_VIKUNJA }}
+      TAG: ${{ github.sha }}
     steps:
       - name: Remove and redeploy services
         run: |

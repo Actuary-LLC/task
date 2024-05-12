@@ -3,7 +3,7 @@ auth:
     enabled: false
   openid:
     enabled: true
-    redirecturl: "https://task.actuary.dev/auth/openid/"
+    redirecturl: https://task.actuary.dev/auth/openid/authentiklogin
     providers:
       - name: "authentik login"
         authurl: https://authentik.actuary.dev/application/o/vikunja/

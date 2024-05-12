@@ -1,14 +1,22 @@
-version: '3'
+ version: '3'
 
 networks:
   reverse-proxy:
     external: true
 
+configs:
+  authentik:
+    name: authentik_config_${TAG}
+    file: ./config.yaml
+
 services:
   vikunja:
-    image: vikunja/vikunja
+    image: vikunja/vikunja:0.23.0
     networks:
       - reverse-proxy
+    configs:
+      - source: authentik
+        target: /etc/vikunja/config.yaml
     environment:
       PUID: 99
       PGID: 100

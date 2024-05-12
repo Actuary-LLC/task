@@ -46,6 +46,6 @@ services:
         - "traefik.http.routers.task.tls.certresolver=myresolver"
         - "traefik.http.services.task.loadbalancer.server.port=3456"
         ## Middlewares
-        - "traefik.http.routers.task.middlewares=middlewares-authentik@file"
+        #- "traefik.http.routers.task.middlewares=middlewares-authentik@file"
     volumes:
       - /mnt/user/docker/volumes/vikunja:/app/vikunja/files

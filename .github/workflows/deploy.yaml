@@ -1,4 +1,4 @@
-name: 'Redeploy'
+name: 'Deploy'
 on:
   workflow_dispatch:
   push:
@@ -7,16 +7,16 @@ on:
 
 jobs:
   checkout-repository:
-    runs-on: [actuary]
+    runs-on: [traefik]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           repository: 'Actuary-LLC/task'
           ref: 'main'       
-  redeploy-service:
+  deploy-task:
     needs: checkout-repository
-    runs-on: [self-hosted]
+    runs-on: [traefik]
     env:
       VIKUNJA_DATABASE_USER: ${{ vars.POSTGRES_USER }}
       VIKUNJA_DATABASE_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}

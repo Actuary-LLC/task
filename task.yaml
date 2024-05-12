@@ -38,6 +38,7 @@ services:
       - 3456:3456
     deploy:
       labels:
+        ## Proxy
         - "traefik.enable=true"
         - "traefik.http.routers.task.rule=Host(`task.actuary.dev`)"
         - "traefik.http.routers.task.entrypoints=websecure"

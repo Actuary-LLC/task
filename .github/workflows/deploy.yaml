@@ -16,6 +16,11 @@ jobs:
           ref: 'main'       
           AUTHENTIK_ID_VIKUNJA: ${{ vars.AUTHENTIK_ID_VIKUNJA }}
           AUTHENTIK_SECRET_VIKUNJA: ${{ secrets.AUTHENTIK_SECRET_VIKUNJA }}
+      - name: Configure application
+        run: |
+          sed -i 's/${AUTHENTIK_ID_VIKUNJA}/${{ secrets.AUTHENTIK_ID_VIKUNJA }}/' config.yaml
+          sed -i 's/${AUTHENTIK_SECRET_VIKUNJA}/${{ secrets.AUTHENTIK_SECRET_VIKUNJA }}/' config.yaml
+          cat config.yaml
   deploy-task:
     needs: checkout-repository
     runs-on: [traefik]

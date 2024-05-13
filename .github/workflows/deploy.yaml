@@ -14,6 +14,8 @@ jobs:
         with:
           repository: 'Actuary-LLC/task'
           ref: 'main'       
+          AUTHENTIK_ID_VIKUNJA: ${{ vars.AUTHENTIK_ID_VIKUNJA }}
+          AUTHENTIK_SECRET_VIKUNJA: ${{ secrets.AUTHENTIK_SECRET_VIKUNJA }}
   deploy-task:
     needs: checkout-repository
     runs-on: [traefik]

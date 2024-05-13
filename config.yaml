@@ -3,10 +3,10 @@ auth:
     enabled: false
   openid:
     enabled: true
-    redirecturl: https://task.actuary.dev/auth/openid/authentiklogin
+    #redirecturl: https://task.actuary.dev/auth/openid/authentiklogin
     providers:
       - name: "authentik login"
-        authurl: https://authentik.actuary.dev/application/o/authorize/
-        logouturl: https://authentik.actuary.dev/application/o/vikunja/end-session/
+        authurl: https://authentik.actuary.dev/application/o/vikunja/
+        #logouturl: https://authentik.actuary.dev/application/o/vikunja/end-session/
         clientid: ${AUTHENTIK_ID_VIKUNJA}
         clientsecret: ${AUTHENTIK_SECRET_VIKUNJA}

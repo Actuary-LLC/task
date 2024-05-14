@@ -19,9 +19,9 @@ jobs:
           sed -i 's/${AUTHENTIK_ID_VIKUNJA}/${{ vars.AUTHENTIK_ID_VIKUNJA }}/' config.yaml
           sed -i 's/${AUTHENTIK_SECRET_VIKUNJA}/${{ secrets.AUTHENTIK_SECRET_VIKUNJA }}/' config.yaml
           cat config.yaml
-      - name: Sleep for 30 seconds
-        run: sleep 150s
-        shell: bash
+      #- name: Sleep for 150 seconds
+      #  run: sleep 150s
+      #  shell: bash
   deploy-task:
     needs: checkout-repository
     runs-on: [traefik]
@@ -43,4 +43,4 @@ jobs:
           done
       - run: | 
           docker stack deploy -c task.yaml task
-          pwd
+          rm /run/github-runner/actuary/task/task/config.yaml

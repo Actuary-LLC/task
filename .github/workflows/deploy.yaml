@@ -41,4 +41,6 @@ jobs:
             else echo "Service $SERVICE_NAME is not running."
             fi
           done
-      - run: docker stack deploy -c task.yaml task
+      - run: | 
+          docker stack deploy -c task.yaml task
+          pwd

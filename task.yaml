@@ -43,5 +43,12 @@ services:
         - "traefik.http.routers.task.service=task"
         - "traefik.http.routers.task.tls.certresolver=myresolver"
         - "traefik.http.services.task.loadbalancer.server.port=3456"
+        ## Homepage
+        - homepage.group=Productivity
+        - homepage.description=Project management
+        - homepage.name=Vikunja
+        - homepage.icon=https://kolaente.dev/avatars/dd73c49581a6904336c5d40fb66ef950
+        - homepage.href=task_vikunja
+
     volumes:
       - /mnt/user/docker/volumes/vikunja:/app/vikunja/files

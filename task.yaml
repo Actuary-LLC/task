@@ -51,6 +51,8 @@ services:
         - homepage.server=my-docker
         - homepage.container=task_vikunja
         - homepage.href=https://task.actuary.dev
+        ## DIUN
+        - diun.enable=true
 
     volumes:
       - /mnt/user/docker/volumes/vikunja:/app/vikunja/files

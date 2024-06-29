@@ -53,6 +53,7 @@ services:
         - homepage.href=https://task.actuary.dev
         ## DIUN
         - diun.enable=true
+        - diun.notify_on=new
 
     volumes:
       - /mnt/user/docker/volumes/vikunja:/app/vikunja/files

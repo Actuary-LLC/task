@@ -11,7 +11,7 @@ configs:
 
 services:
   vikunja:
-    image: vikunja/vikunja:0.23.0
+    image: vikunja/vikunja:0.24.2
     networks:
       - reverse-proxy
     configs:
